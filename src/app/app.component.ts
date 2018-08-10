@@ -7,4 +7,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  public url = 'http://suggestqueries.google.com/complete/search';
+  public params = {
+    hl: 'en',
+    ds: 'yt',
+    xhr: 't',
+    client: 'youtube'
+  };
+  public search = '';
+
+  handleResultSelected(result) {
+    this.search = result;
+    console.log('selected typeahead....', this.search);
+  }
 }
